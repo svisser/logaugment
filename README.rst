@@ -34,5 +34,13 @@ You can now do:
 .. code:: python
 
     logaugment.add(logger, {'custom_key': 'custom_value'})
-    logger.warn('My message')
-    My message: custom_value
+    logger.warn("My message")
+    # My message: custom_value
+
+You can also use a function:
+
+.. code:: python
+
+    logaugment.add(logger, lambda record: {'custom_key': record.levelname})
+    logger.warn("My message")
+    # My message: WARNING
