@@ -2,11 +2,11 @@ import logging
 
 
 class AugmentFilter(logging.Filter):
-        
+
     def __init__(self, name='', args=None):
         super(AugmentFilter, self).__init__(name)
         self._args = args
-    
+
     def filter(self, record):
         if self._args is not None:
             data = {}
@@ -19,7 +19,8 @@ class AugmentFilter(logging.Filter):
             if isinstance(self._args, dict):
                 data = self._args
             for key, value in data.items():
-                setattr(record, key, value)
+                if record.__dict__.get(key) is None:
+                    setattr(record, key, value)
         return True
 
 
