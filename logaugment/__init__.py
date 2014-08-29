@@ -1,10 +1,10 @@
 import logging
 
 
-class AugmentAddFilter(logging.Filter):
+class AugmentFilter(logging.Filter):
         
     def __init__(self, name='', args=None):
-        super(AugmentAddFilter, self).__init__(name)
+        super(AugmentFilter, self).__init__(name)
         self._args = args
     
     def filter(self, record):
@@ -15,5 +15,6 @@ class AugmentAddFilter(logging.Filter):
 
 
 def add(logger, args):
-    new_filter = AugmentAddFilter(name='logaugment.AugmentAddFilter', args=args)
-    logger.addFilter(new_filter)
+    logger.addFilter(
+        AugmentFilter(name='logaugment.AugmentFilter', args=args)
+    )
