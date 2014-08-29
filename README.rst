@@ -3,16 +3,23 @@ logaugment
 
 Python library for augmenting log records with additional information
 
-If you need to add custom keys to your Pyton logging strings you can either
+If you need to add custom keys to your Python logging strings you can either
 add them to each logging call:
 
+.. code:: python
+
     logger.info("My message: {}".format(value))`
+
 or:
+
+.. code:: python
 
     logger.info("My message", extra={'key': 'value'})
     
 That is inconvenient so this library allows you to add values just once and
 they're then available for all logging calls afterwards:
+
+.. code:: python
 
     >>> import logging, logaugment
     >>> logger = logging.getLogger()
@@ -22,6 +29,8 @@ they're then available for all logging calls afterwards:
     >>> logger.addHandler(handler)
 
 You can now do:
+
+.. code:: python
 
     >>> logaugment.add(logger, {
     ...     'custom_key': 'custom_value',
