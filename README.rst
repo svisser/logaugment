@@ -47,6 +47,8 @@ You can also use a function which returns a dictionary:
 
 You can pass the `extra` dictionary which overrides the augmented data:
 
+.. code:: python
+
     logaugment.add(logger, {'custom_key': 'custom_value'})
     logger.warn("My message", extra={'custom_key': 'extra_value'})
     # My message: extra_value
