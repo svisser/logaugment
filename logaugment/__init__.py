@@ -5,11 +5,11 @@ class AugmentAddFilter(logging.Filter):
         
     def __init__(self, name='', args=None):
         super(AugmentAddFilter, self).__init__(name)
-        self.args = args
+        self._args = args
     
     def filter(self, record):
-        if self.args is not None:
-            for key, value in self.args.items():
+        if self._args is not None:
+            for key, value in self._args.items():
                 setattr(record, key, value)
         return True
 
