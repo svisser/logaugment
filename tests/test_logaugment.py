@@ -11,17 +11,17 @@ import logaugment
 
 class LogaugmentTestCase(unittest.TestCase):
     
-    def test_one(self):
-        stream = StringIO()
-        logger = logging.getLogger()
-        logger.setLevel(logging.DEBUG)
-        handler = logging.StreamHandler(stream)
-        formatter = logging.Formatter("This is the value: %(key)s")
-        handler.setFormatter(formatter)
-        logger.addHandler(handler)
-        
-        logaugment.add(logger, {
-            'key': 'new-value',
-        })
-        logger.info('message')
-        self.assertEqual(stream.getvalue(), "This is the value: new-value\n")
+    def setUp(self):
+        self.stream = StringIO()
+        self.logger = logging.getLogger()
+        self.logger.setLevel(logging.DEBUG)
+        self.handler = logging.StreamHandler(self.stream)
+        self.formatter = logging.Formatter("This is the value: %(custom_key)s")
+        self.handler.setFormatter(self.formatter)
+        self.logger.addHandler(self.handler)
+    
+    def test_augment_with_dictionary(self):
+        logaugment.add(self.logger, {'custom_key': 'new-value'})
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the value: new-value\n")
