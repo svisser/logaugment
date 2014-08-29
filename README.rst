@@ -8,7 +8,7 @@ add them to each logging call:
 
 .. code:: python
 
-    logger.info("My message: {}".format(value))`
+    logger.info("My message: {}".format(value))
 
 or:
 
