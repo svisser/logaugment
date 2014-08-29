@@ -44,3 +44,9 @@ You can also use a function which returns a dictionary:
     logaugment.add(logger, lambda record: {'custom_key': record.levelname})
     logger.warn("My message")
     # My message: WARNING
+
+You can pass the `extra` dictionary which overrides the augmented data:
+
+    logaugment.add(logger, {'custom_key': 'custom_value'})
+    logger.warn("My message", extra={'custom_key': 'extra_value'})
+    # My message: extra_value
