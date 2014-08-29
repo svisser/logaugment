@@ -9,7 +9,16 @@ class AugmentFilter(logging.Filter):
     
     def filter(self, record):
         if self._args is not None:
-            for key, value in self._args.items():
+            data = {}
+            try:
+                if callable(self._args):
+                    data = self._args(record)
+            except NameError:  # Python 3.1
+                if hasattr(self._args, '__call__'):
+                    data = self._args(record)
+            if isinstance(self._args, dict):
+                data = self._args
+            for key, value in data.items():
                 setattr(record, key, value)
         return True
 
