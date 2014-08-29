@@ -4,7 +4,7 @@ import logging
 class AugmentAddFilter(logging.Filter):
         
     def __init__(self, name='', args=None):
-        super(AddFilter, self).__init__(name)
+        super(AugmentAddFilter, self).__init__(name)
         self.args = args
     
     def filter(self, record):
