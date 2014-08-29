@@ -29,7 +29,7 @@ they're then available for all logging calls afterwards:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-You can now do:
+You can now use a dictionary to specify the keys / values:
 
 .. code:: python
 
@@ -37,7 +37,7 @@ You can now do:
     logger.warn("My message")
     # My message: custom_value
 
-You can also use a function:
+You can also use a function which returns a dictionary:
 
 .. code:: python
 
