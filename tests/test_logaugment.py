@@ -16,7 +16,7 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)
         self.handler = logging.StreamHandler(self.stream)
-        self.formatter = logging.Formatter("This is the value: %(custom_key)s")
+        self.formatter = logging.Formatter("This is the %(message)s: %(custom_key)s")
         self.handler.setFormatter(self.formatter)
         self.logger.addHandler(self.handler)
     
@@ -24,4 +24,4 @@ class LogaugmentTestCase(unittest.TestCase):
         logaugment.add(self.logger, {'custom_key': 'new-value'})
         self.logger.info('message')
         self.assertEqual(self.stream.getvalue(),
-                         "This is the value: new-value\n")
+                         "This is the message: new-value\n")
