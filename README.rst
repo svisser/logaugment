@@ -55,7 +55,8 @@ You can also use a function which returns a dictionary:
     logger.warn("My message")
     # My message: WARNING
 
-You can pass the `extra` dictionary which overrides the augmented data:
+You can pass an `extra` dictionary in the call which overrides the
+augmented data:
 
 .. code:: python
 
