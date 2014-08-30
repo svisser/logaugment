@@ -22,22 +22,12 @@ then this library allows you to add then easily:
 Why?
 ====
 
-If you need to add custom keys to your Python logging strings you can either
-add them to each logging call:
+If you need to add custom keys to your Python logging strings you need to pass
+them in with each logging call. That is inconvenient so this library allows you
+to add values just once and they're then available for all logging calls
+afterwards.
 
-.. code:: python
-
-    logger.info("My message: {}".format(value))
-
-or:
-
-.. code:: python
-
-    logger.info("My message", extra={'key': 'value'})
-
-That is inconvenient so this library allows you to add values just once and
-they're then available for all logging calls afterwards. Here is a full
-example:
+Here is a full example:
 
 .. code:: python
 
