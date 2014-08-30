@@ -31,7 +31,12 @@ class AugmentFilter(logging.Filter):
         return True
 
 
-def add(logger, args):
+def add(logger, *args, **kwargs):
+    argument = None
+    if len(args) == 1 and not kwargs:
+        argument = args[0]
+    elif not args and kwargs:
+        argument = kwargs
     logger.addFilter(
-        AugmentFilter(name='logaugment.AugmentFilter', args=args)
+        AugmentFilter(name='logaugment.AugmentFilter', args=argument)
     )

@@ -56,3 +56,9 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger.info('message')
         self.assertEqual(self.stream.getvalue(),
                          "This is the message: called_value\n")
+
+    def test_augment_with_kwargs(self):
+        logaugment.add(self.logger, custom_key='new-value')
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: new-value\n")
