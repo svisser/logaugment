@@ -43,3 +43,16 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger.info('message')
         self.assertEqual(self.stream.getvalue(),
                          "This is the message: test_logaugment.py\n")
+
+    def test_augment_with_callable_dictionary(self):
+        class MyDictionary(dict):
+
+            def __call__(self, *args, **kwargs):
+                return {'custom_key': 'called_value'}
+
+        my_dict = MyDictionary()
+        my_dict['custom_key'] = 'stored_value'
+        logaugment.add(self.logger, my_dict)
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: called_value\n")

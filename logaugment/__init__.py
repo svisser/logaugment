@@ -23,7 +23,7 @@ class AugmentFilter(logging.Filter):
             except NameError:  # Python 3.1
                 if hasattr(self._args, '__call__'):
                     data = self._args(record)
-            if isinstance(self._args, dict):
+            if not data and isinstance(self._args, dict):
                 data = self._args
             for key, value in data.items():
                 if record.__dict__.get(key) is None:
