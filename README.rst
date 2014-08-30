@@ -31,7 +31,15 @@ they're then available for all logging calls afterwards:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-You can now use a dictionary to specify the keys / values:
+You can use keywords to specify additional values:
+
+.. code:: python
+
+    logaugment.add(loger, custom_key='custom_value')
+    logger.warn("My message")
+    # My message: custom_value
+
+You can also use a dictionary to specify the keys / values:
 
 .. code:: python
 
