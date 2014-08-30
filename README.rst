@@ -19,6 +19,12 @@ then this library allows you to add them easily:
     logger.warn("My message")
     # My message: custom_value
 
+You can install the library with pip:
+
+.. code:: bash
+
+    pip install logaugment
+
 Why?
 ====
 
