@@ -36,7 +36,8 @@ or:
     logger.info("My message", extra={'key': 'value'})
 
 That is inconvenient so this library allows you to add values just once and
-they're then available for all logging calls afterwards:
+they're then available for all logging calls afterwards. Here is a full
+example:
 
 .. code:: python
 
@@ -47,6 +48,10 @@ they're then available for all logging calls afterwards:
     formatter = logging.Formatter("%(message)s: %(custom_key)s")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
+
+    logaugment.add(logger, custom_key='custom_value')
+    logger.warn("My message")
+    # My message: custom_value
 
 Examples
 ========
