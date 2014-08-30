@@ -13,6 +13,7 @@ setup(
     description='Python logging library for augmenting log records with additional information',
     long_description=long_description,
     url='https://github.com/svisser/logaugment',
+    download_url='https://pypi.python.org/pypi/logaugment',
     author='Simeon Visser',
     author_email='simeonvisser@gmail.com',
     license='MIT',
@@ -30,5 +31,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Topic :: System :: Logging',
-    ]
+    ],
+    keywords='python custom logging'
 )
