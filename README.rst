@@ -32,7 +32,9 @@ Here is a full example:
 .. code:: python
 
     import logging
+
     import logaugment
+
     logger = logging.getLogger()
     handler = logging.StreamHandler()
     formatter = logging.Formatter("%(message)s: %(custom_key)s")
