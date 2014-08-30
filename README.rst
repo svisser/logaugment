@@ -5,6 +5,23 @@ Python logging library for augmenting log records with additional information.
 
 This library supports Python 2.7+.
 
+If you want custom keys in your logged string:
+
+.. code:: python
+
+    formatter = logging.Formatter("%(message)s: %(custom_key)s")
+
+then this library allows you to add then easily:
+
+.. code:: python
+
+    logaugment.add(logger, custom_key='custom_value')
+    logger.warn("My message")
+    # My message: custom_value
+
+Why?
+====
+
 If you need to add custom keys to your Python logging strings you can either
 add them to each logging call:
 
@@ -30,6 +47,9 @@ they're then available for all logging calls afterwards:
     formatter = logging.Formatter("%(message)s: %(custom_key)s")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
+
+Examples
+========
 
 You can use keywords to specify additional values:
 
