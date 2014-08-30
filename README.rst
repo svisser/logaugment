@@ -23,7 +23,7 @@ You can install the library with pip:
 
 .. code:: bash
 
-    pip install logaugment
+    $ pip install logaugment
 
 Why?
 ====
