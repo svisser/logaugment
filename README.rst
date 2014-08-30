@@ -11,7 +11,7 @@ If you want custom keys in your logged string:
 
     formatter = logging.Formatter("%(message)s: %(custom_key)s")
 
-then this library allows you to add then easily:
+then this library allows you to add them easily:
 
 .. code:: python
 
