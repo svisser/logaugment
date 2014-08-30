@@ -3,7 +3,7 @@ logaugment
 
 Python logging library for augmenting log records with additional information.
 
-This library supports Python 2.7+.
+This library supports Python 2.7.x and Python 3.x.
 
 If you want custom keys in your logged string:
 
