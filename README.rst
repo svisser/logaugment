@@ -35,7 +35,7 @@ You can use keywords to specify additional values:
 
 .. code:: python
 
-    logaugment.add(loger, custom_key='custom_value')
+    logaugment.add(logger, custom_key='custom_value')
     logger.warn("My message")
     # My message: custom_value
 
