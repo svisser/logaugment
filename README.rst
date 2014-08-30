@@ -66,7 +66,10 @@ You can also use a function which returns a dictionary:
 
 .. code:: python
 
-    logaugment.add(logger, lambda record: {'custom_key': record.levelname})
+    def process_record(record):
+        return {'custom_key': record.levelname}
+
+    logaugment.add(logger, process_record)
     logger.warn("My message")
     # My message: WARNING
 
