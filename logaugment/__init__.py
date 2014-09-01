@@ -25,9 +25,13 @@ class AugmentFilter(logging.Filter):
                     data = self._args(record)
             if not data and isinstance(self._args, dict):
                 data = self._args
+            if data and not hasattr(record, '_logaugment'):
+                record._logaugment = {}
             for key, value in data.items():
-                if record.__dict__.get(key) is None:
+                if (record.__dict__.get(key) is None or
+                        key in record._logaugment):
                     setattr(record, key, value)
+                    record._logaugment[key] = value
         return True
 
 

@@ -63,3 +63,10 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger.info('message')
         self.assertEqual(self.stream.getvalue(),
                          "This is the message: new-value\n")
+
+    def test_most_recent_value_is_used(self):
+        logaugment.add(self.logger, custom_key='custom-value-1')
+        logaugment.add(self.logger, custom_key='custom-value-2')
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: custom-value-2\n")
