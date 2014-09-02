@@ -19,6 +19,12 @@ then this library allows you to add them easily:
     logger.warn("My message")
     # My message: custom_value
 
+Note that this call provides a default value for that key. This means you can
+safely make logging calls without getting exceptions that the key is missing.
+See below if you wish to override the value for a particular logging call.
+You should not repeatedly call logaugment.add just to change the value - it's
+intended as set-once-and-forget functionality.
+
 You can install the library with pip:
 
 .. code:: bash
