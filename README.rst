@@ -95,3 +95,10 @@ augmented data:
     logaugment.add(logger, {'custom_key': 'custom_value'})
     logger.warn("My message", extra={'custom_key': 'extra_value'})
     # My message: extra_value
+
+You can use `logaugment.reset` to remove all additional values that
+were added using the `logaugment` library:
+
+.. code:: python
+
+    logaugment.reset(logger)
