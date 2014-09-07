@@ -70,3 +70,12 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger.info('message')
         self.assertEqual(self.stream.getvalue(),
                          "This is the message: custom-value-2\n")
+
+    def test_remove_all_logaugment_adds(self):
+        logaugment.add(self.logger, custom_key='custom-value-1')
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: custom-value-1\n")
+        self.assertEqual(len(self.logger.filters), 1)
+        logaugment.reset(self.logger)
+        self.assertEqual(self.logger.filters, [])

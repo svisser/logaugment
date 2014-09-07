@@ -44,3 +44,12 @@ def add(logger, *args, **kwargs):
     logger.addFilter(
         AugmentFilter(name='logaugment.AugmentFilter', args=argument)
     )
+
+
+def reset(logger):
+    remove = []
+    for filter_obj in logger.filters:
+        if isinstance(filter_obj, AugmentFilter):
+            remove.append(filter_obj)
+    for remove_obj in remove:
+        logger.removeFilter(remove_obj)
