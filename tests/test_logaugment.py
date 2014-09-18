@@ -102,3 +102,17 @@ class LogaugmentTestCase(unittest.TestCase):
         self.assertEqual(len(self.logger.filters), 1)
         logaugment.reset(self.logger)
         self.assertEqual(self.logger.filters, [])
+
+    def test_set_combines_add_and_remove(self):
+        logaugment.add(self.logger, custom_key='custom-value-1')
+        logaugment.set(self.logger, custom_key='custom-value-2')
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: custom-value-2\n")
+
+    def test_latest_set_value_takes_priority(self):
+        logaugment.set(self.logger, custom_key='custom-value-2')
+        logaugment.add(self.logger, custom_key='custom-value-1')
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: custom-value-1\n")

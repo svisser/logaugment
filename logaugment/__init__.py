@@ -52,3 +52,8 @@ def reset(logger):
             remove.append(filter_obj)
     for remove_obj in remove:
         logger.removeFilter(remove_obj)
+
+
+def set(logger, *args, **kwargs):
+    reset(logger)
+    add(logger, *args, **kwargs)

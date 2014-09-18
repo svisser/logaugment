@@ -15,7 +15,7 @@ then this library allows you to add them easily:
 
 .. code:: python
 
-    logaugment.add(logger, custom_key='custom_value')
+    logaugment.set(logger, custom_key='custom_value')
     logger.warn("My message")
     # My message: custom_value
 
@@ -24,6 +24,12 @@ safely make logging calls without getting exceptions that the key is missing.
 See below if you wish to override the value for a particular logging call.
 You should not repeatedly call logaugment.add just to change the value - it's
 intended as set-once-and-forget functionality.
+
+You can use `logaugment.set` to specify custom values for a given logger.
+
+You can use `logaugment.add` to keep the custom values that were already
+set and add new ones. If you're redefining a custom key and value then this
+value will be used instead of the earlier value.
 
 You can install the library with pip:
 
