@@ -1,5 +1,4 @@
 import collections
-
 import logging
 
 __title__ = 'logaugment'
