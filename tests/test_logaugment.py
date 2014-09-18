@@ -1,3 +1,4 @@
+import collections
 import logging
 import unittest
 
@@ -35,6 +36,28 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger.info('message', extra={'custom_key': 'extra-value'})
         self.assertEqual(self.stream.getvalue(),
                          "This is the message: extra-value\n")
+
+    def test_augment_with_mapping(self):
+        class MyMapping(collections.Mapping):
+
+            def __init__(self, *args, **kwargs):
+                super(MyMapping, self).__init__()
+                self._data = {}
+                self._data.update(kwargs)
+
+            def __getitem__(self, key):
+                return self._data[key]
+
+            def __iter__(self):
+                return iter(self._data)
+
+            def __len__(self):
+                return len(self._data)
+
+        logaugment.add(self.logger, MyMapping(custom_key='new-value'))
+        self.logger.info('message')
+        self.assertEqual(self.stream.getvalue(),
+                         "This is the message: new-value\n")
 
     def test_augment_with_callable(self):
         def my_callable(record):
