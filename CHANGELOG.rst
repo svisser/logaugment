@@ -1,8 +1,8 @@
 Changelog
 =========
 
-0.1.2 (upcoming)
-----------------
+0.1.2 (September 18, 2014)
+--------------------------
 
 * Added logaugment.set which calls reset() and add() in order.
 * Make logaugment.add work for all collections.Mapping instances.
