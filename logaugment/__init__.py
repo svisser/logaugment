@@ -19,11 +19,9 @@ class AugmentFilter(logging.Filter):
         if self._args is not None:
             data = {}
             try:
-                if callable(self._args):
-                    data = self._args(record)
-            except NameError:  # Python 3.1
-                if hasattr(self._args, '__call__'):
-                    data = self._args(record)
+                data = self._args(record)
+            except TypeError:
+                pass
             if not data and isinstance(self._args, collections.Mapping):
                 data = self._args
             if data and not hasattr(record, '_logaugment'):
