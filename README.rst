@@ -20,7 +20,7 @@ then this library allows you to set them easily:
     # My message: custom_value
 
 This allows you to safely make logging calls without getting exceptions
-that those keys is missing  See below if you wish to override the value
+that those keys are missing. See below if you wish to override the value
 for a particular logging call.
 
 Installation
@@ -60,10 +60,10 @@ were added using the `logaugment` library.
 Notes on logaugment.add
 =======================
 
-The call `logaugment.add` adds default values for that key. This means you can
-You should not repeatedly call logaugment.add just to change the value - it's
-intended as set-once-and-forget functionality. In that case it's better to use
-`logaugment.set`.
+The call `logaugment.add` adds default values for that key. You should
+not repeatedly call logaugment.add just to change the value - it's
+intended as set-once-and-forget functionality. In that case it's
+better to use `logaugment.set`.
 
 Why?
 ====
