@@ -32,5 +32,5 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Topic :: System :: Logging',
     ],
-    keywords='python custom logging'
+    keywords='python custom logging keys keywords values'
 )
