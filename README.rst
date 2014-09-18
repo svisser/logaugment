@@ -52,17 +52,12 @@ You can use `logaugment.set` to specify custom values for a given logger.
 
 You can use `logaugment.add` to keep the custom values that were already
 set and add new ones. If you're redefining a custom key / value then this
-value will be used instead of the earlier value.
+value will be used instead of the earlier value. You should not repeatedly
+call `logaugment.add` just to change the value; in that case it's better
+to use `logaugment.set`.
 
 You can use `logaugment.reset` to remove all additional values that
 were added using the `logaugment` library.
-
-Notes on logaugment.add
-=======================
-
-The call `logaugment.add` adds default values for that key. You should
-not repeatedly call logaugment.add just to change the value; in that
-case it's better to use `logaugment.set`.
 
 Why?
 ====
