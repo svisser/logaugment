@@ -61,9 +61,8 @@ Notes on logaugment.add
 =======================
 
 The call `logaugment.add` adds default values for that key. You should
-not repeatedly call logaugment.add just to change the value - it's
-intended as set-once-and-forget functionality. In that case it's
-better to use `logaugment.set`.
+not repeatedly call logaugment.add just to change the value; in that
+case it's better to use `logaugment.set`.
 
 Why?
 ====
