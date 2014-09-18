@@ -28,7 +28,7 @@ intended as set-once-and-forget functionality.
 You can use `logaugment.set` to specify custom values for a given logger.
 
 You can use `logaugment.add` to keep the custom values that were already
-set and add new ones. If you're redefining a custom key and value then this
+set and add new ones. If you're redefining a custom key / value then this
 value will be used instead of the earlier value.
 
 You can install the library with pip:
