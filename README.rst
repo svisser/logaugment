@@ -68,7 +68,8 @@ You can use keywords to specify additional values:
     logger.warn("My message")
     # My message: custom_value
 
-You can also use a dictionary to specify the keys / values:
+You can also use a dictionary or subclasses of collections.Mapping
+to specify the keys / values:
 
 .. code:: python
 
