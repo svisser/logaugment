@@ -42,7 +42,7 @@ This library provides three functions:
     # Sets the custom keys and values for the logger.
     logaugment.set(logger, custom_key='custom_value')
 
-    # Adds custom keys and values in addition to those already set
+    # Adds custom keys and values in addition to those already set.
     logaugment.add(logger, custom_key='custom_value')
 
     # Removes all custom keys and values for the logger.
