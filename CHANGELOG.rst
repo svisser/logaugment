@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.1.2 (upcoming)
+----------------
+
+* Make logaugment.add work for all collections.Mapping instances.
+
 0.1.1 (September 8, 2014)
 -------------------------
 

@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst')) as file_readme:
 
 setup(
     name='logaugment',
-    version='0.1.1',
+    version='0.1.2',
     description='Python logging library for augmenting log records with additional information',
     long_description=long_description,
     url='https://github.com/svisser/logaugment',
