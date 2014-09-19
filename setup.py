@@ -3,8 +3,13 @@ from setuptools import setup
 
 here = path.abspath(path.dirname(__file__))
 
+with open(path.join(here, 'CHANGELOG.rst')) as file_changelog:
+    changelog = file_changelog.read()
+
 with open(path.join(here, 'README.rst')) as file_readme:
-    long_description = file_readme.read()
+    readme = file_readme.read()
+
+long_description = readme + '\n\n' + changelog
 
 
 setup(
