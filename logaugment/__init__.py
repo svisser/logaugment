@@ -35,6 +35,9 @@ class AugmentFilter(logging.Filter):
 
 
 def add(logger, *args, **kwargs):
+    if not args and not kwargs:
+        raise ValueError("You need to provide at least one "
+                         "custom key or function")
     argument = None
     if len(args) == 1 and not kwargs:
         argument = args[0]

@@ -116,3 +116,10 @@ class LogaugmentTestCase(unittest.TestCase):
         self.logger.info('message')
         self.assertEqual(self.stream.getvalue(),
                          "This is the message: custom-value-1\n")
+
+    def test_at_least_one_custom_key_needed(self):
+        with self.assertRaises(ValueError):
+            logaugment.add(self.logger)
+
+        with self.assertRaises(ValueError):
+            logaugment.set(self.logger)
