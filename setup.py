@@ -14,7 +14,7 @@ long_description = readme + '\n\n' + changelog
 
 setup(
     name='logaugment',
-    version='0.1.2',
+    version='0.1.3',
     description='Python logging library for augmenting log records with additional information',
     long_description=long_description,
     url='https://github.com/svisser/logaugment',
