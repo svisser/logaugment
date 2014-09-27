@@ -1,11 +1,10 @@
 Changelog
 =========
 
-0.1.3 (upcoming)
+0.1.3 (September 28, 2014)
 ----------------
 
 * Added check to ensure at least one argument is provided.
-
 
 0.1.2 (September 18, 2014)
 --------------------------
