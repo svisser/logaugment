@@ -1,8 +1,12 @@
-import collections
 import logging
+import sys
+if sys.version_info.major >= 3 and sys.version_info.minor >= 3:
+    from collections.abc import Mapping
+else:
+    from collections import Mapping
 
 __title__ = 'logaugment'
-__version__ = '0.1.3'
+__version__ = '0.1.4'
 __author__ = 'Simeon Visser'
 __email__ = 'simeonvisser@gmail.com'
 __license__ = 'MIT'
