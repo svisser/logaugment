@@ -1,8 +1,12 @@
-import collections
 import logging
+import sys
+if (sys.version_info.major, sys.version_info.minor) >= (3, 3):
+    from collections.abc import Mapping
+else:
+    from collections import Mapping
 
 __title__ = 'logaugment'
-__version__ = '0.1.3'
+__version__ = '0.1.4'
 __author__ = 'Simeon Visser'
 __email__ = 'simeonvisser@gmail.com'
 __license__ = 'MIT'
@@ -22,7 +26,7 @@ class AugmentFilter(logging.Filter):
                 data = self._args(record)
             except TypeError:
                 pass
-            if not data and isinstance(self._args, collections.Mapping):
+            if not data and isinstance(self._args, Mapping):
                 data = self._args
             if data and not hasattr(record, '_logaugment'):
                 record._logaugment = {}
