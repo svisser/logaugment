@@ -26,7 +26,7 @@ class AugmentFilter(logging.Filter):
                 data = self._args(record)
             except TypeError:
                 pass
-            if not data and isinstance(self._args, collections.Mapping):
+            if not data and isinstance(self._args, Mapping):
                 data = self._args
             if data and not hasattr(record, '_logaugment'):
                 record._logaugment = {}
