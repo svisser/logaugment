@@ -1,6 +1,6 @@
 import logging
 import sys
-if sys.version_info.major >= 3 and sys.version_info.minor >= 3:
+if (sys.version_info.major, sys.version_info.minor) >= (3, 3):
     from collections.abc import Mapping
 else:
     from collections import Mapping
